@@ -1,0 +1,35 @@
+--Kaylon Young
+--SQL Challenge
+--Data Analysis
+
+
+--1. List the following details of each employee: employee number, last name, first name, sex, and salary.
+SELECT a.emp_no, 
+a.last_name, 
+a.first_name, 
+a.sex,
+b.salary
+FROM employees a
+LEFT JOIN salaries b 
+ON a.emp_no = b.emp_no
+ORDER BY a.emp_no;
+
+--2. List first name, last name, and hire date for employees who were hired in 1986.
+SELECT emp_no, 
+last_name, 
+first_name, 
+hire_date
+FROM employees
+WHERE hire_date >='1986-01-01' and hire_date <='1986-12-31'
+ORDER BY emp_no;
+
+
+-- 3. List the manager of each department with the following information: 
+-- department number, department name, the manager's employee number, last name, first name.
+SELECT a.dept_no, a.dept_name, b.emp_no, c.last_name, c.first_name
+FROM departments a
+LEFT JOIN dept_manager b 
+on a.dept_no = b.dept_no
+JOIN employees c 
+on b.emp_no = c.emp_no
+ORDER BY a.dept_no, b.emp_no;
