@@ -87,3 +87,18 @@ SELECT last_name, COUNT(last_name) AS "last_name_count"
 FROM employees
 GROUP BY last_name
 ORDER BY last_name_count DESC ;
+
+--------Bonus--------
+CREATE VIEW emp_salary_title AS
+SELECT a.emp_no, 
+a.last_name, 
+a.first_name,
+a.sex, 
+b.salary,
+c.title 
+FROM employees AS a 
+LEFT JOIN salaries AS b 
+ON a.emp_no = b.emp_no
+	LEFT JOIN titles AS c  
+    ON a.emp_title_id = c.title_id
+    ORDER BY a.emp_no;
