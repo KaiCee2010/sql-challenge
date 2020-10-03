@@ -67,3 +67,15 @@ JOIN departments c
 on b.dept_no = c.dept_no
 WHERE c.dept_name = 'Sales'
 ORDER BY a.emp_no;
+
+
+-- 7. List all employees in the Sales and Development departments, including their 
+-- employee number, last name, first name, and department name.
+SELECT a.emp_no, a.last_name, a.first_name, c.dept_name
+FROM employees a
+LEFT JOIN dept_emp b 
+on a.emp_no = b.emp_no
+JOIN departments c 
+on b.dept_no = c.dept_no
+WHERE c.dept_name in ('Sales', 'Development')
+ORDER BY a.emp_no;
