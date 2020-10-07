@@ -27,13 +27,13 @@ ORDER BY emp_no;
 
 -- 3. List the manager of each department with the following information: 
 -- department number, department name, the manager's employee number, last name, first name.
-SELECT a.dept_no, a.dept_name, b.emp_no, c.last_name, c.first_name
+SELECT a.dept_no, a.dept_name, b.dm_emp_no, c.last_name, c.first_name
 FROM departments a
 LEFT JOIN dept_manager b 
-on a.dept_no = b.dept_no
+on a.dept_no = b.dm_dept_no
 JOIN employees c 
-on b.emp_no = c.emp_no
-ORDER BY a.dept_no, b.emp_no;
+on b.dm_emp_no = c.emp_no
+ORDER BY a.dept_no, b.dm_emp_no;
 
 
 -- 4. List the department of each employee with the following information: 
@@ -41,9 +41,9 @@ ORDER BY a.dept_no, b.emp_no;
 SELECT a.emp_no, a.last_name, a.first_name, c.dept_name
 FROM employees a
 LEFT JOIN dept_emp b 
-on a.emp_no = b.emp_no
+on a.emp_no = b.de_emp_no
 JOIN departments c 
-on b.dept_no = c.dept_no
+on b.de_dept_no = c.dept_no
 ORDER BY a.emp_no;
 
 
