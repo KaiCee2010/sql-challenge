@@ -1,4 +1,5 @@
-# sql-challenge
+# SQL-Challenge
+
 This repository is for the sql-challenge homework.  It contains:
 * EmployeeSQL folder
 * Data folder
@@ -7,6 +8,7 @@ This repository is for the sql-challenge homework.  It contains:
 * FormerEmployeeDB_Diagram.png (inside EmployeeSQL folder)
 * FormerEmployee_Analysis.ipynb (inside EmployeeSQL folder)
 * Output folder (inside EmployeeSQL folder)
+
 *Note: Database info was saved in the config.py file in the EmployeeSQL folder in my local repository.  However, this file has been set to ignore and was not uploaded to hide my username and password for the database.*
 
 
