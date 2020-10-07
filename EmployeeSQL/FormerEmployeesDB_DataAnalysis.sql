@@ -11,7 +11,7 @@ a.sex,
 b.salary
 FROM employees a
 LEFT JOIN salaries b 
-ON a.emp_no = b.emp_no
+ON a.emp_no = b.sal_emp_no
 ORDER BY a.emp_no;
 
 
