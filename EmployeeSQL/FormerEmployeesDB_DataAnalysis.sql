@@ -74,9 +74,9 @@ ORDER BY a.emp_no;
 SELECT a.emp_no, a.last_name, a.first_name, c.dept_name
 FROM employees a
 LEFT JOIN dept_emp b 
-on a.emp_no = b.emp_no
+on a.emp_no = b.de_emp_no
 JOIN departments c 
-on b.dept_no = c.dept_no
+on b.de_dept_no = c.dept_no
 WHERE c.dept_name in ('Sales', 'Development')
 ORDER BY a.emp_no;
 
